@@ -1,0 +1,22 @@
+
+ospf:
+  networks:
+    - network: 150.1.5.0
+      wildmask: 0.0.0.255
+      area: 0
+    - network: 5.5.5.0
+      wildmask: 0.0.0.255
+      area: 0
+
+eigrp:
+  networks:
+    - network: 55.55.55.0
+      wildmask: 0.0.0.255
+      
+redistribute:
+  ospf_id: 1
+  ospf_metric: 5
+  eigrp_as: "1" 
+  eigrp_metric: 1500 100 255 1 1500 
+
+  

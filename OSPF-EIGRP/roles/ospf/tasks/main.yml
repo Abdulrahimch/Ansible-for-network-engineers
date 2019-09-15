@@ -1,0 +1,12 @@
+---
+# tasks file for ospf
+- name: configure OSPF
+  with_items: "{{ospf.networks}}"
+  debug: 
+    msg: "{{item.network}}"
+- name: distribute loopback under ospf 
+  with_items: "{{ospf.networks}}"
+  ios_config:
+    lines:
+      - "network {{item.network}} {{item.wildmask}} area {{item.area}}"
+    parents: router ospf 1

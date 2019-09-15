@@ -1,0 +1,8 @@
+
+eigrp:
+  networks:
+    - network: 150.1.8.0
+      wildmask: 0.0.0.255
+    - network: 8.8.8.0
+      wildmask: 0.0.0.255
+      

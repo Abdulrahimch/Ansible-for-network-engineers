@@ -1,0 +1,61 @@
+---
+- name: configure loopback 0 and loopback 1 on all routers
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+  become: yes
+  become_method: enable
+  roles: 
+    - loop
+  tags:
+    - loop
+
+- name: Run ospf on ospf-routers
+  hosts: ospf-routers
+  connection: network_cli
+  become: yes
+  become_method: enable
+  gather_facts: false
+  roles:
+    - ospf
+  tags: 
+    - ospf
+
+- name: Run EIGRP on eigrp-routers
+  hosts: eigrp-routers
+  connection: network_cli
+  become: yes
+  become_method: enable
+  gather_facts: false
+  roles:
+    - eigrp
+  tags: 
+    - eigrp
+
+
+- name: Run redistribution on R5
+  hosts: R5
+  connection: network_cli
+  become: yes
+  become_method: enable
+  gather_facts: false
+  roles:
+    - redistribution
+  tags: 
+    - redist
+
+
+- name: this task to test some variables on local machine 
+  hosts: local
+  connection: local
+  become: yes
+  become_method: enable
+  gather_facts: false
+  tasks:
+    - debug:
+        msg: redistribute eigrp "{{redistribute.eigrp_as}}"  metric "{{redistribute.ospf_metric}}"  subnets 
+
+
+  tags:
+    - local
+    

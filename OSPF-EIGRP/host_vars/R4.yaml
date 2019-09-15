@@ -1,0 +1,9 @@
+
+ospf:
+  networks:
+    - network: 150.1.4.0
+      wildmask: 0.0.0.255
+      area: 1
+    - network: 4.4.4.0
+      wildmask: 0.0.0.255
+      area: 1
