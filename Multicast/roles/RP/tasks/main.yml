@@ -1,0 +1,7 @@
+---
+# tasks file for pim-sparse-mode
+- name: Configure RP
+  ios_config:
+    lines:
+      - ip pim rp-candidate loopback 0
+      

@@ -1,0 +1,8 @@
+
+L3_interfaces:
+  - interface_type: FastEthernet
+    interface_id: 0/0
+    ip_address: 155.1.16.6
+    subnet_mask: 255.255.255.0
+
+

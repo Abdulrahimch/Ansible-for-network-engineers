@@ -1,0 +1,10 @@
+---
+# tasks file for pim-sparse-mode
+- name: run pim-sparse-mode on all routers 
+  with_items: "{{L3_interfaces}}"
+  ios_config:
+    lines:
+      - "ip address {{item.ip_address}} {{item.subnet_mask}}"
+      - ip pim sparse-mode
+      
+    parents: "interface {{item.interface_type}} {{item.interface_id}}"

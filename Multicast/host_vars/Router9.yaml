@@ -1,0 +1,13 @@
+
+L3_interfaces:
+  - interface_type: Loopback
+    interface_id: 0
+    ip_address: 150.1.9.9
+    subnet_mask: 255.255.255.0
+      
+    
+  - interface_type: Serial
+    interface_id: 1/1
+    ip_address: 155.1.49.9
+    subnet_mask: 255.255.255.0
+

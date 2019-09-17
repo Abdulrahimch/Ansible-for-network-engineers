@@ -1,0 +1,25 @@
+[all:vars]
+ansible_python_interpreter= /usr/bin/python3.6
+ansible_ssh_user= cisco
+ansible_network_os= ios
+
+
+
+
+[routers]
+Router2 ansible_host=155.1.23.2
+Router3 ansible_host=155.1.23.3
+Router4 ansible_host=155.1.49.4
+Router6 ansible_host=155.1.16.6
+Router5 ansible_host=155.1.23.5
+Router1 ansible_host=155.1.16.1
+Router7 ansible_host=155.1.47.7
+Router8 ansible_host=155.1.47.8
+Router9 ansible_host=155.1.49.9
+
+
+[local]
+127.0.0.1
+  
+
+

@@ -1,0 +1,24 @@
+
+L3_interfaces:
+  - interface_type: Loopback
+    interface_id: 0
+    ip_address: 150.1.8.8
+    subnet_mask: 255.255.255.0
+      
+    
+  - interface_type: FastEthernet
+    interface_id: 0/0
+    ip_address: 155.1.47.8
+    subnet_mask: 255.255.255.0
+
+
+  - interface_type: Serial
+    interface_id: 1/0
+    ip_address: 155.1.58.8
+    subnet_mask: 255.255.255.0
+
+  - interface_type: Serial
+    interface_id: 1/1
+    ip_address: 155.1.18.1
+    subnet_mask: 255.255.255.0
+
