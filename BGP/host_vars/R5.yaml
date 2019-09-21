@@ -1,0 +1,19 @@
+bgp_as: 200
+router_id: 5.5.5.5
+neighbors:
+  - neighbor: 150.1.1.1
+    remote_as: 100
+    update_source: loopback 0
+    ebgp_multihop: 100
+  - neighbor: 150.1.2.2
+    remote_as: 53
+    update_source: loopback 0
+    ebgp_multihop: 100
+  - neighbor: 150.1.8.8
+    remote_as: 200
+networks:
+  - prefix: 150.1.5.0
+    masklen: 24
+
+  
+ 

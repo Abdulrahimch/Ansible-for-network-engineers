@@ -1,0 +1,8 @@
+bgp_as: 100
+router_id: 4.4.4.4
+peers: [R5, R6]
+neighbors:
+{% for i in {{peers}} -%}
+  - neighbor: {{i}}.loopback0
+    remote_as: {{i}}.bgp_as 
+{% endfor %} 

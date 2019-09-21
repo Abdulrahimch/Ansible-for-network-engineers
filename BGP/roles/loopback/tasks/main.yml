@@ -1,0 +1,6 @@
+---
+- name: Configure Loopback0
+  ios_l3_interface:
+    name: Loopback 0
+    ipv4: "150.1.{{inventory_hostname[1]}}.{{inventory_hostname[1]}}/24"
+    

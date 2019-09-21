@@ -1,0 +1,7 @@
+- ios_bgp:
+    config:
+      bgp_as: "{{bgp_as}}"
+      router_id: "{{router_id}}"
+      neighbors: "{{neighbors}}"
+      networks: "{{networks}}"
+
