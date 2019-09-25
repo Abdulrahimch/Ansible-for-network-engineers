@@ -1,0 +1,10 @@
+- ios_bgp:
+    config:
+      bgp_as: 200
+      router_id: 8.8.8.8
+      neighbors:
+              - neighbor: 150.1.5.5
+                remote_as: 200
+                update_source: loopback 0
+         
+        

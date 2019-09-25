@@ -1,0 +1,4 @@
+---
+# defaults file for bgp
+list:
+    R1:

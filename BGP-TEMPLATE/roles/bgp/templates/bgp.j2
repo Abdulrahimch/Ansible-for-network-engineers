@@ -1,0 +1,13 @@
+- ios_bgp:
+    config:
+      bgp_as: {{bgp_as}}
+      router_id: {{router_id}}
+      neighbors:
+      {% for key, value in neighbors.iteritems() %}
+        - neighbor: {{key}}
+                remote_as: {{value.as}}
+                update_source: loopback 0
+        {% if bgp_as != value.as %}
+        ebgp_multihop: 100
+        {% endif %} 
+      {% endfor %}  

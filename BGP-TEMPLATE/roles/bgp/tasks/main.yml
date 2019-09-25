@@ -1,0 +1,7 @@
+---
+- name: Creat files from "bgp.j2" in Template.
+  template: 
+    src: bgp.j2
+    dest: "roles/bgp/files/{{inventory_hostname}}.yaml"        
+- name: run files on the routers
+  include_tasks: "files/{{inventory_hostname}}.yaml"
