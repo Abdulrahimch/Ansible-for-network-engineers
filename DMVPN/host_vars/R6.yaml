@@ -1,0 +1,13 @@
+bgp_as: 100
+router_id: 6.6.6.6
+neighbors:
+  - neighbor: 150.1.4.4
+    remote_as: 100
+  - neighbor: 150.1.1.1
+    remote_as: 100
+networks:
+  - prefix: 150.1.6.0
+    masklen: 24
+
+  
+ 

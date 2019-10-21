@@ -1,0 +1,19 @@
+{% if inventory_hostname == 'R1' %}
+  - ios_config:
+      lines:
+        - ip address 192.168.1.1 255.255.255.0
+        - tunnel source FastEthernet 0/0
+        - tunnel mode gre multipoint
+        - ip nhrp network-id {{inventory_hostname[1]}}{{inventory_hostname[1]}}
+      parents: interface tunnel 0
+
+{% else %}
+  - ios_config:
+      lines:
+        - ip address 192.168.1.{{inventory_hostname[1]}} 255.255.255.0
+        - tunnel source FastEthernet 0/0
+        - tunnel destination 10.0.1.1
+        - ip nhrp network-id {{inventory_hostname[1]}}{{inventory_hostname[1]}}
+        - ip nhrp nhs 192.168.1.1
+      parents: interface tunnel 0
+{% endif %}        

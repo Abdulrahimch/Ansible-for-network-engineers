@@ -1,0 +1,6 @@
+---
+# tasks file for loopback
+- name: configure Loopback 0 for all hosts
+  ios_l3_interface:
+    name: loopback 0
+    ipv4: "150.1.{{inventory_hostname[1]}}.{{inventory_hostname[1]}}/24"
