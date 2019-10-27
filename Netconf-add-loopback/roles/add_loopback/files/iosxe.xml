@@ -1,0 +1,19 @@
+<config>
+    <interfaces xmlns= "urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface>
+            <name>Loopback 5</name>
+            <description>this is loopback interface</description>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">
+                ianaift:softwareLoopback
+            </type>
+            <enabled>true</enabled>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                <address>
+                    <ip>5.5.5.5</ip>
+                    <netmask>255.255.255.0</netmask>
+                </address>
+            </ipv4>
+        </interface>
+    </interfaces>
+</config>
+

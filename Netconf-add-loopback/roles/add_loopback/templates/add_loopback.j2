@@ -1,0 +1,19 @@
+<config>
+    <interfaces xmlns= "urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface>
+            <name>{{name}}</name>
+            <description>{{desc}}</description>
+            <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">
+                {{type}}
+            </type>
+            <enabled>{{status}}</enabled>
+            <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+                <address>
+                    <ip>{{ip_address}}</ip>
+                    <netmask>{{mask}}</netmask>
+                </address>
+            </ipv4>
+        </interface>
+    </interfaces>
+</config>
+
