@@ -1,0 +1,14 @@
+---
+# tasks file for nxos_EthernetChannel
+- name: Creat chaannel_groups
+  with_items: "{{portchannel}}"
+  nxos_portchannel:
+    members: "{{item.interfaces}}"
+    group:  "{{item.group}}"
+    mode: on
+    state: present
+
+- nxos_switchport:
+    interface: "po{{item.group}}"
+    mode: trunk
+  with_items: "{{portchannel}}"

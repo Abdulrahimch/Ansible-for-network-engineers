@@ -1,0 +1,28 @@
+portchannel:
+  - interfaces:
+      - Ethernet1/6
+      - Ethernet1/8
+    group: "{{inventory_hostname[-1]}}6"
+  - interfaces:
+      - Ethernet1/5
+      - Ethernet1/7
+    group: "{{inventory_hostname[-1]}}5"
+  - interfaces:
+      - Ethernet1/3
+      - Ethernet1/4
+    group: 34
+
+hsrp_interfaces: 
+  - interface: vlan10
+    group: 10
+    vip: 155.1.10.1
+  - interface: vlan20
+    group: 10
+    vip: 155.1.20.1
+  - interface: vlan30
+    group: 10
+    vip: 155.1.30.1
+
+    
+    
+    

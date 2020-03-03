@@ -1,0 +1,14 @@
+---
+# tasks file for nxos_hsrp
+- name: enable hsrp on nxos devices
+  nxos_feature:
+    feature: 'hsrp'
+    state: enabled
+
+
+- name: configure hsrp
+  with_items: "{{hsrp_interfaces}}"
+  nxos_hsrp:
+    group: "{{item.group}}"
+    vip: "{{item.vip}}"
+    interface: "{{item.interface}}"

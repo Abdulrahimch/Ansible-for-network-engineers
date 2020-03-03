@@ -1,0 +1,10 @@
+---
+# tasks file for netconf_l3_interface
+- name: creat L3_interfaces
+  with_items: "{{l3_interfaces}}"
+  template:
+    src: netconf_l3.j2
+    dest: "roles/netconf_l3_interface/files/{{inventory_hostname}}.xml"
+- name: run netconf protocol
+  netconf_config:
+    content: "{{lookup('file', './{{inventory_hostname}}.xml')}}"

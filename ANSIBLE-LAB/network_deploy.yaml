@@ -1,0 +1,31 @@
+---
+- name: creat vlans
+  hosts: dist
+  connection: local
+  gather_facts: Flase
+  become: yes
+  become_method: enable
+  roles:
+    - nxos_vlan
+    - nxos_po_trunk
+    - nxos_hsrp
+    - nxos_l3_interface
+- name: creat vlans
+  hosts: access
+  connection: local
+  gather_facts: Flase
+  become: yes
+  become_method: enable
+  roles:
+    - nxos_vlan
+    - nxos_po_trunk 
+    - nxos_l3_interface
+  
+- name: creat vlans
+  hosts: core
+  connection: local
+  gather_facts: Flase
+  become: yes
+  become_method: enable
+  roles:
+    - netconf_l3_interface

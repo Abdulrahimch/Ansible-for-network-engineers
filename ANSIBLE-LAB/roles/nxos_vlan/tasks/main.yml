@@ -1,0 +1,16 @@
+---
+# tasks file for nxos_vlan
+- name: Ensure that vlans ranged btw 10-20 are not present on the switch.
+  nxos_vlan:
+    provider:
+      timeout: 60
+    vlan_range: "10-25"
+    state: absent
+
+- name: Creat three vlans.
+  with_items: "{{vlans}}"
+  nxos_vlan:
+    provider:
+      timeout: 60
+    vlan_id: "{{item.id}}"
+    name: "{{item.name}}"

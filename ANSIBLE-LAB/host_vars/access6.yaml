@@ -1,0 +1,5 @@
+l3_interfaces:
+  - interface_id: 0
+    interface_type: Loopback
+    description: this is for Loopback 0
+    ip_address: 150.1.6.6/32
