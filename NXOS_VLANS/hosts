@@ -1,0 +1,26 @@
+[all:vars]
+ansible_python_interpreter= "/usr/bin/env python"
+ansible_ssh_user= cisco
+ansible_network_os= nxos
+
+[nxos:children]
+dist
+access
+
+[core]
+core1 ansible_host=172.16.30.55
+core2 ansible_host=172.16.30.56 
+
+[dist]
+dist3 ansible_host=172.16.30.57
+dist4 ansible_host=172.16.30.58 
+
+
+[access]
+access5 ansible_host=172.16.30.52
+access6 ansible_host=172.16.30.53 
+
+
+[onedevice]
+access5 ansible_host=172.16.30.52
+
