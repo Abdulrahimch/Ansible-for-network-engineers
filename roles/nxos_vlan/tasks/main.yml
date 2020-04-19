@@ -1,7 +1,0 @@
----
-# tasks file for nxos_vlan
-- name: Ensure VLAN 50 exists with the name WEB and is in the shutdown state
-  nxos_vlan:
-    vlan_id: 200
-    admin_state: up
-    name: WEB
