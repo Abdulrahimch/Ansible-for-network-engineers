@@ -1,0 +1,10 @@
+---
+# tasks file for GRE
+- name: run the template and save files under /roles/files
+  template:
+    src: gre.j2
+    dest: "roles/GRE/files/{{inventory_hostname}}.yaml"
+- name: run the tasks from /roles/files created from the template
+  include_tasks: "files/{{inventory_hostname}}.yaml"
+
+

@@ -1,0 +1,15 @@
+---
+# tasks file for nxos_l3_interface
+- name: enable interface-vlan
+  nxos_feature: 
+    feature: "interface-vlan"
+    state: enabled
+  
+
+- name: configure l3_interfaces
+  with_items: "{{l3_interfaces}}"
+  nxos_l3_interface:
+    name: "{{item.interface_type}}{{item.interface_id}}"
+    ipv4: "{{item.ip_address}}"
+    state: present
+

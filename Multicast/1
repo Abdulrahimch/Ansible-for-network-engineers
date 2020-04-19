@@ -1,0 +1,29 @@
+---       
+- name: configure loopback 0 and loopback 1 on all routers
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+  become: yes
+  become_method: enable
+  roles: 
+    - pim-sparse-mode
+  tags:
+    - pim-sparse
+
+
+
+- name: this task for test
+  hosts: Router1
+  gather_facts: false
+  connection: local
+  become: yes
+  become_method: enable
+  tasks:
+    - debug:
+        msg: "ip address {{item.ip_address}} {{item.subnet_mask}}"
+  with_items: "{{L3_interfaces}}"
+  
+  tags:
+    - test
+
+

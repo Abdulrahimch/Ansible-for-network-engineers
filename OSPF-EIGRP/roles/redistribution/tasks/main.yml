@@ -1,0 +1,15 @@
+---
+# tasks file for ospf
+- name: configure OSPF into EIGRP
+  ios_config:
+    lines: 
+      - "redistribute ospf {{redistribute.ospf_id}}"   
+      - "default-metric {{redistribute.eigrp_metric}}"
+    parents: "router eigrp {{redistribute.eigrp_as}}"  
+
+
+- name: configure EIGRP into OSPF
+  ios_config:
+    lines: 
+      - "redistribute eigrp {{redistribute.eigrp_as}}  metric {{redistribute.ospf_metric}}  subnets" 
+    parents: "router ospf {{redistribute.ospf_id}}"

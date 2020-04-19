@@ -1,0 +1,9 @@
+---
+# tasks file for add_loopback
+- name: using Netcong add loopback interfaces
+  template:
+     src: add_loopback.j2
+     dest: "roles/add_loopback/files/{{inventory_hostname}}.xml"
+- name: configure Netconf 
+  netconf_config:
+      content: "{{lookup('file', './{{inventory_hostname}}.xml')}}"  

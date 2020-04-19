@@ -1,0 +1,9 @@
+  - ios_config:
+      lines:
+        - ip address 192.168.1.5 255.255.255.0
+        - tunnel source FastEthernet 0/0
+        - tunnel destination 10.0.1.1
+        - ip nhrp network-id 55
+        - ip nhrp nhs 192.168.1.1
+      parents: interface tunnel 0
+        

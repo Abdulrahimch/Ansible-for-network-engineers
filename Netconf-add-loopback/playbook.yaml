@@ -1,0 +1,35 @@
+---
+- name: lets try it 
+  hosts: all
+  connection: local
+  gather_facts: False
+  become: yes
+  become_method: enable
+  vars:
+    type: "ianaift:softwareLoopback"
+  vars_prompt:
+    - name: name
+      prompt: "Enter the interface name: "
+      private: no
+
+    - name: desc
+      prompt: "Enter the description: "
+      private: no
+      
+    - name: status
+      prompt: "Enter the interface status: "
+      private: no
+
+    - name: ip_address
+      prompt: "Enter the ip address: "
+      private: no
+
+    - name: mask
+      prompt: "Enter the network mask: "
+      private: no
+  tasks:
+    - set_fact:
+        ansible_connection: local
+                  
+  roles:
+    - add_loopback

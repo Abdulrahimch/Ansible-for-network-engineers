@@ -1,0 +1,7 @@
+---
+# tasks file for pim-sparse-mode
+- name: configure BSR router 
+  ios_config:
+    lines:
+      - ip pim bsr-candidate loopback 0
+      

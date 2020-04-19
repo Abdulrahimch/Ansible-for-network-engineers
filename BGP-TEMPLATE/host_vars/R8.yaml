@@ -1,0 +1,7 @@
+bgp_as: 200
+router_id: 8.8.8.8
+neighbors: 
+  150.1.5.5:
+    as: 200
+      
+      
